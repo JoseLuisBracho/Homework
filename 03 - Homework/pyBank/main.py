@@ -40,13 +40,13 @@ print(f"Greatest Decrease in Profits: {dates[min_mo_prof[0][0] + 1]} (${min_mo_p
 
 
 # Write results to a csv file
-output_file = os.path.join(currentDir, "pyBank", "Resources", "results_analysis.csv")
-with open(output_file, 'w', newline='') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter=" ")
-    csvwriter.writerow("Finantial Analysis")
-    csvwriter.writerow("--------------------------------")
-    csvwriter.writerow(f"Total Months: {num_mo}")
-    csvwriter.writerow(f"Total: ${sum_prof_loss:0.0f}")
-    csvwriter.writerow(f"Average Change: ${(sum(change) / len(change)):0.2f}")
-    csvwriter.writerow(f"Greatest Increase in Profits: {dates[max_mo_prof[0][0] + 1]} (${max_mo_prof[0][1]:0.0f})")
-    csvwriter.writerow(f"Greatest Decrease in Profits: {dates[min_mo_prof[0][0] + 1]} (${min_mo_prof[0][1]:0.0f})")
+output_file = os.path.join(currentDir, "pyBank", "Resources", "results_analysis.txt")
+with open(output_file, 'w', newline='') as txtfile:
+    #txtfile = csv.writer(csvfile, delimiter=" ")
+    txtfile.write("Finantial Analysis\n")
+    txtfile.write("--------------------------------\n")
+    txtfile.write(f"Total Months: {num_mo}\n")
+    txtfile.write(f"Total: ${sum_prof_loss:0.0f}\n")
+    txtfile.write(f"Average Change: ${(sum(change) / len(change)):0.2f}\n")
+    txtfile.write(f"Greatest Increase in Profits: {dates[max_mo_prof[0][0] + 1]} (${max_mo_prof[0][1]:0.0f})\n")
+    txtfile.write(f"Greatest Decrease in Profits: {dates[min_mo_prof[0][0] + 1]} (${min_mo_prof[0][1]:0.0f})\n")

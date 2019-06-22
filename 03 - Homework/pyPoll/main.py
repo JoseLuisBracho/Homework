@@ -54,15 +54,15 @@ print(f'Winner: {winner}')
 print('-------------------------------')
 
 # Write results to a csv file
-output_file = os.path.join(currentDir, "pyPoll", "Resources", "results_election.csv")
-with open(output_file, 'w', newline='') as csvfile:
-    csvwriter = csv.writer(csvfile, delimiter=" ")
-    csvwriter.writerow('Election Results')
-    csvwriter.writerow('-------------------------------')
-    csvwriter.writerow(f'Total votes: {tot_num_voters}')
-    csvwriter.writerow('-------------------------------')
+output_file = os.path.join(currentDir, "pyPoll", "Resources", "results_election.txt")
+with open(output_file, 'w', newline='') as txtfile:
+    #txtfile = csv.writer(csvfile, delimiter=" ")
+    txtfile.write('Election Results\n')
+    txtfile.write('-------------------------------\n')
+    txtfile.write(f'Total votes: {tot_num_voters}\n')
+    txtfile.write('-------------------------------\n')
     for k in range(len(list_cand)):
-        csvwriter.writerow(f'{list_cand[k]}: {percent_of_voter[k]: 0.3f}% ({voters_cand[k]})')
-    csvwriter.writerow('-------------------------------')
-    csvwriter.writerow(f'Winner: {winner}')
-    csvwriter.writerow('-------------------------------')
+        txtfile.write(f'{list_cand[k]}: {percent_of_voter[k]: 0.3f}% ({voters_cand[k]})\n')
+    txtfile.write('-------------------------------\n')
+    txtfile.write(f'Winner: {winner}\n')
+    txtfile.write('-------------------------------')
