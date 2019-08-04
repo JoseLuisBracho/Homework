@@ -81,7 +81,7 @@ FROM employees
 GROUP BY last_name
 ORDER BY same_lastName DESC;
 
--- Employee number 
+-- Employee number 499942
 
 SELECT emp_no, last_name, first_name
 FROM employees
